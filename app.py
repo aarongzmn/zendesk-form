@@ -36,8 +36,7 @@ def handle_form():
         # Make the API request
         user = email + "/token"
         api_token = os.environ.get('ZENDESK_API_TOKEN')
-        subdomain = os.environ.get('ZENDESK_SUBDOMAIN')
-        url = f"https://{subdomain}.zendesk.com/api/v2/requests.json"
+        url = "https://clothingshoponlinehelp.zendesk.com/api/v2/requests.json"
         headers = {"content-type": "application/json"}
         r = requests.post(url, data=ticket, auth=(user, api_token), headers=headers)
         if r.status_code != 201:
